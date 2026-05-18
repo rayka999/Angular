@@ -22,14 +22,16 @@
                 +b2.value, +b3.value, +b4.value)">
     </div>
 </form>
-@if (mediaParcial) {
+@if (mediaParcial>=60) {
     <div>
         <p>Média parcial = {{mediaParcial}}</p>
+        <br>
+        <p class="aprovado">Situação: Aprovado</p>
     </div>
 }
-@if (mediaParcial){
-    <p>Media parcial menor que 60</p>
-    <p>Situação: recuperação</p>
+@if (60>mediaParcial){
+    <p>Media parcial ={{mediaParcial}} (menor que 60)</p>
+    <p class="recuperacao">Situação: recuperação</p>
     <div>
         <label for="nf">Nota final</label>
         <input type="number" id="nf" #nf>
@@ -43,9 +45,9 @@
         <p>media final = {{mediafinal}}</p>
     </div>
     @if(mediafinal>=60) {
-        <p>Situação: Aprovado</p>
+        <p class="aprovado">Situação: Aprovado</p>
     }
     @if(60> mediafinal){
-        <p>Situação: Reprovado</p>
+        <p class="reprovado">Situação: Reprovado</p>
     }
 }
