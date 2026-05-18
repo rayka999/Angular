@@ -1,0 +1,51 @@
+<h1>Calcula a média de uma disciplina</h1>
+<form>
+    <div>
+        <label for="b1">Bim 1</label>
+        <input id="b1" type="number" #b1>
+    </div>
+    <div>
+        <label for="b2">Bim 2</label>
+        <input id="b2" type="number" #b2>
+    </div>
+    <div>
+        <label for="b3">Bim 3</label>
+        <input id="b3" type="number" #b3>
+    </div>
+    <div>
+        <label for="b4">Bim 4</label>
+        <input id="b4" type="number" #b4>
+    </div>
+    <div>
+        <input type="button" value="Calcular"
+               (click)="calcularMediaParcial(+b1.value,
+                +b2.value, +b3.value, +b4.value)">
+    </div>
+</form>
+@if (mediaParcial) {
+    <div>
+        <p>Média parcial = {{mediaParcial}}</p>
+    </div>
+}
+@if (mediaParcial){
+    <p>Media parcial menor que 60</p>
+    <p>Situação: recuperação</p>
+    <div>
+        <label for="nf">Nota final</label>
+        <input type="number" id="nf" #nf>
+    </div>
+    <input type="button" value="Calcular"
+    (click)="calcularMediaFinal(mediaParcial,+nf.value)">
+}
+
+@if(mediafinal){
+    <div>
+        <p>media final = {{mediafinal}}</p>
+    </div>
+    @if(mediafinal>=60) {
+        <p>Situação: Aprovado</p>
+    }
+    @if(60> mediafinal){
+        <p>Situação: Reprovado</p>
+    }
+}
