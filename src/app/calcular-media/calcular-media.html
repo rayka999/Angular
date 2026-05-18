@@ -1,53 +1,91 @@
 <h1>Calcula a média de uma disciplina</h1>
+
 <form>
     <div>
         <label for="b1">Bim 1</label>
         <input id="b1" type="number" #b1>
     </div>
+
     <div>
         <label for="b2">Bim 2</label>
         <input id="b2" type="number" #b2>
     </div>
+
     <div>
         <label for="b3">Bim 3</label>
         <input id="b3" type="number" #b3>
     </div>
+
     <div>
         <label for="b4">Bim 4</label>
         <input id="b4" type="number" #b4>
     </div>
+
     <div>
-        <input type="button" value="Calcular"
-               (click)="calcularMediaParcial(+b1.value,
-                +b2.value, +b3.value, +b4.value)">
+        <input 
+            type="button" 
+            value="Calcular"
+            (click)="calcularMediaParcial(
+                +b1.value,
+                +b2.value,
+                +b3.value,
+                +b4.value
+            )">
     </div>
 </form>
-@if (mediaParcial>=60) {
+
+@if (mediaParcial !== undefined && mediaParcial >= 60) {
+
     <div>
-        <p>Média parcial = {{mediaParcial}}</p>
+        <p>Média parcial = {{ mediaParcial }}</p>
         <br>
         <p class="aprovado">Situação: Aprovado</p>
     </div>
-}
-@if (60>mediaParcial){
-    <p>Media parcial ={{mediaParcial}} (menor que 60)</p>
-    <p class="recuperacao">Situação: recuperação</p>
-    <div>
-        <label for="nf">Nota final</label>
-        <input type="number" id="nf" #nf>
-    </div>
-    <input type="button" value="Calcular"
-    (click)="calcularMediaFinal(mediaParcial,+nf.value)">
+
 }
 
-@if(mediafinal){
+@if (mediaParcial !== undefined && mediaParcial < 60) {
+
     <div>
-        <p>media final = {{mediafinal}}</p>
+        <p>Média parcial = {{ mediaParcial }} (menor que 60)</p>
+
+        <p class="recuperacao">
+            Situação: Recuperação
+        </p>
+
+        <div>
+            <label for="nf">Nota final</label>
+            <input type="number" id="nf" #nf>
+        </div>
+
+        <input
+            type="button"
+            value="Calcular Média Final"
+            (click)="calcularMediaFinal(mediaParcial!, +nf.value)">
     </div>
-    @if(mediafinal>=60) {
-        <p class="aprovado">Situação: Aprovado</p>
+
+}
+
+@if (mediafinal !== undefined) {
+
+    <div>
+        <p>Média final = {{ mediafinal }}</p>
+    </div>
+
+    @if (mediafinal >= 60) {
+
+        <p class="aprovado">
+            Situação: Aprovado
+        </p>
+
     }
-    @if(60> mediafinal){
-        <p class="reprovado">Situação: Reprovado</p>
+
+    @if (60>mediafinal) {
+
+        <p class="reprovado">
+            Situação: Reprovado
+        </p>
+
     }
+
 }

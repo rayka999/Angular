@@ -1,10 +1,89 @@
-aprovado{
-    color: rgb(0, 117, 49)
-}
-reprovado{
-    color:red
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
 }
 
-recuperacao{
-    color: rgb(197, 197, 0);
+h1{
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+form{
+    background-color: white;
+    width: 350px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+form div{
+    margin-bottom: 18px;
+}
+
+label{
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+input[type="number"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cfd6dd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input[type="number"]:focus{
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(52,152,219,0.4);
+}
+
+input[type="button"]{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="button"]:hover{
+    background-color: #2980b9;
+}
+
+.aprovado{
+    color: #1e8449;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.reprovado{
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.recuperacao{
+    color: #d4ac0d;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+p{
+    text-align: center;
+    font-size: 17px;
+}
+
+div{
+    margin-top: 10px;
 }

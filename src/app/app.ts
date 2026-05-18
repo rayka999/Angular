@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { CalculaMedia } from './calcular-media/calcular-media';
+import { CalcularMedia } from './calcular-media/calcular-media';
 
 @Component({
   selector: 'app-root',
-  imports: [CalculaMedia],
+  imports: [CalcularMedia],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

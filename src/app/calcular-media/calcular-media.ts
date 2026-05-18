@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './calcular-media.html',
   styleUrl: './calcular-media.scss',
 })
-export class CalculaMedia {
+export class CalcularMedia {
   protected mediaParcial: number | undefined
   protected mediafinal:number | undefined
   
