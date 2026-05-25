@@ -32,9 +32,7 @@
                 +b4.value
             )">
     </div>
-</form>
-
-@if (mediaParcial !== undefined && mediaParcial >= 60) {
+    @if (mediaParcial !== undefined && mediaParcial >= 60) {
 
     <div>
         <p>Média parcial = {{ mediaParcial }}</p>
@@ -44,7 +42,7 @@
 
 }
 
-@if (mediaParcial !== undefined && mediaParcial < 60) {
+@if (mediaParcial !== undefined && 60> mediaParcial) {
 
     <div>
         <p>Média parcial = {{ mediaParcial }} (menor que 60)</p>
@@ -89,3 +87,5 @@
     }
 
 }
+</form>
+
