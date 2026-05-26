@@ -1,28 +1,29 @@
-<h1>Calcula a média de uma disciplina</h1>
+<div class="container">
+    <h1 class="d-flex justify-content-center">Calcula a média de uma disciplina</h1>
 
 <form>
-    <div>
-        <label for="b1">Bim 1</label>
-        <input id="b1" type="number" #b1>
+    <div class="mb-3">
+        <label for="b1" class="form-label" >Bim 1</label>
+        <input id="b1" type="number" #b1 class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="b2" class="form-label">Bim 2</label>
+        <input id="b2" type="number" #b2 class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="b3" class="form-label">Bim 3</label>
+        <input id="b3" type="number" #b3 class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="b4" class="form-label">Bim 4</label>
+        <input id="b4" type="number" #b4 class="form-control" required>
     </div>
 
     <div>
-        <label for="b2">Bim 2</label>
-        <input id="b2" type="number" #b2>
-    </div>
-
-    <div>
-        <label for="b3">Bim 3</label>
-        <input id="b3" type="number" #b3>
-    </div>
-
-    <div>
-        <label for="b4">Bim 4</label>
-        <input id="b4" type="number" #b4>
-    </div>
-
-    <div>
-        <input 
+        <input class="btn btn-outline-dark"
             type="button" 
             value="Calcular"
             (click)="calcularMediaParcial(
@@ -32,35 +33,38 @@
                 +b4.value
             )">
     </div>
+</form>
+<br>
     @if (mediaParcial !== undefined && mediaParcial >= 60) {
 
-    <div>
-        <p>Média parcial = {{ mediaParcial }}</p>
+    <div class="mb-3">
+        <p >Média parcial = {{ mediaParcial }}</p>
         <br>
-        <p class="aprovado">Situação: Aprovado</p>
+        <p class="alert alert-success">Situação: Aprovado</p>
     </div>
 
 }
 
 @if (mediaParcial !== undefined && 60> mediaParcial) {
-
-    <div>
+    <form action="">
+    <div class="mb-3">
         <p>Média parcial = {{ mediaParcial }} (menor que 60)</p>
 
-        <p class="recuperacao">
+        <p  class="alert alert-warning">
             Situação: Recuperação
         </p>
 
-        <div>
-            <label for="nf">Nota final</label>
-            <input type="number" id="nf" #nf>
+        <div class="mb-3">
+            <label for="nf" class="form-label">Nota final</label>
+            <input type="number" id="nf" #nf class="form-control" required>
         </div>
 
-        <input
+        <input class="btn btn-outline-dark"
             type="button"
             value="Calcular Média Final"
             (click)="calcularMediaFinal(mediaParcial!, +nf.value)">
     </div>
+    </form>
 
 }
 
@@ -72,7 +76,7 @@
 
     @if (mediafinal >= 60) {
 
-        <p class="aprovado">
+        <p class="alert alert-success">
             Situação: Aprovado
         </p>
 
@@ -80,12 +84,11 @@
 
     @if (60>mediafinal) {
 
-        <p class="reprovado">
+        <p class="alert alert-danger">
             Situação: Reprovado
         </p>
 
     }
 
 }
-</form>
-
+</div>
